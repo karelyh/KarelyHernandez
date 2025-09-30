@@ -1,0 +1,86 @@
+* {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: small;
+    margin: 0; 
+    padding: 0;
+    color: black;
+    box-sizing: border-box;
+}
+
+.Horario {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;          
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.Horario h1 {
+    font-size: 30px;
+    margin: 0 0 20px 0;/* espacio debajo del título */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 2px;
+    color: #D6336C;
+}
+thead th{
+    color: white;
+}
+
+.titulo .material-symbols-outlined {
+    display: flex;
+    line-height: 1;
+    font-size: 35px;
+    color: #D6336C;
+    gap: 1px;
+    position: relative;
+    top: -10px;
+}
+
+.material-symbols-outlined {
+    color: #D6336C;
+
+}
+.Grupo {
+    font-size: 20px;
+    position: relative;
+    top: 7px;
+    color: white
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin-bottom: 20px; /* espacio debajo del título */
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #D6336C;
+}
+
+.Horario table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.Horario td, .Horario th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.Horario th {
+    background: palevioletred;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Horario tr:hover {
+    background: lightpink;
+}
