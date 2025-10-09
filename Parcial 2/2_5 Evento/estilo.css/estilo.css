@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffe6f0, #fff0f6);
+    color: #333;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #D6336C;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    color: #BD4C6A;
+    text-align: center;
+}
+
+p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.introduccion {
+    background-color: #fff;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: center; /* <-- CENTRA IMAGEN Y TEXTO */
+}
+#descripcion {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.introduccion img {
+    display: block;
+    margin: 0 auto 15px auto; 
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.introduccion img:hover {
+    transform: scale(1.05);
+}
+
+.canciones {
+    background: #fff0f6;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.albumes {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.albumes table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.albumes th, .albumes td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.albumes th {
+    background: #ffe6f0;
+}
+
+.albumes tr:hover {
+    background: #F5A3CD;
+}
+
+.boton {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #d6336c;
+    color: white;
+    padding: 12px 24px;
+    margin: 30px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+
+button:hover {
+    background-color: #c12a5b;
+    transform: scale(1.05);
+}
+
+.links {
+    text-align: center;
+    background: #fff0f6;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.links a {
+    color: #d6336c;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #a61e4d;
+}
