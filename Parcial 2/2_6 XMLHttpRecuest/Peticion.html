@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>XML HTTP RECUEST</title>
+</head>
+<body>
+<button id="btn">Cargar Datos</button>
+<div id="datos"></div>
+
+<script>
+    document.getElementById('btn').onclick = function() {
+        const solicitud = new XMLHttpRequest();
+        solicitud.onload = function() {
+            // La respuesta es un array con un objeto que tiene la url de la imagen
+            const respuesta = JSON.parse(solicitud.response);
+            const imagenUrl = respuesta[0].url;
+            // Mostrar la imagen en el div 'datos'  
+            document.getElementById('datos').innerHTML = `<img src="${imagenUrl}" alt="Gato" width="300">`;
+        }
+        solicitud.open("GET", "https://api.thecatapi.com/v1/images/search", true);
+        solicitud.send();
+    }
+</script>
+</body>
+</html>
