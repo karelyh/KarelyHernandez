@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
-    <title>XML HTTP RECUEST</title>
+  <meta charset="UTF-8">
+  <title>Gatitos con XMLHttpRequest</title>
 </head>
 <body>
-<button id="btn">Cargar Datos</button>
-<div id="datos"></div>
-
-<script>
-    document.getElementById('btn').onclick = function() {
-        const solicitud = new XMLHttpRequest();
-        solicitud.onload = function() {
-            // La respuesta es un array con un objeto que tiene la url de la imagen
-            const respuesta = JSON.parse(solicitud.response);
-            const imagenUrl = respuesta[0].url;
-            // Mostrar la imagen en el div 'datos'  
-            document.getElementById('datos').innerHTML = `<img src="${imagenUrl}" alt="Gato" width="300">`;
-        }
-        solicitud.open("GET", "https://api.thecatapi.com/v1/images/search", true);
-        solicitud.send();
+  <button onclick="obtenerGatito()">Mostrar (XHR)</button>
+  <button onclick="obtenerGatitoFetch()">Mostrar(Fetch)</button>
+  <br><br>
+  <div id="resp"></div>
+  <img id="gatito" width="300">
+ 
+  <script>
+    function obtenerGatito() {
+      let solicitud = new XMLHttpRequest();
+ 
+      solicitud.onload = function() {
+        console.log("Respuesta de la API:", solicitud.response);
+        let datos = JSON.parse(solicitud.response);
+        document.getElementById("gatito").src = datos[0].url;
+      };
+ 
+      solicitud.open('GET', 'https://api.thecatapi.com/v1/images/search', true);
+      solicitud.send();
     }
-</script>
+ 
+    function obtenerGatitoFetch() {
+    fetch('https://api.thecatapi.com/v1/images/search')
+      .then((respuesta) => respuesta.json())
+      .then((datos) => {
+        console.log("Respuesta de la API:", datos);
+        document.getElementById("gatito").src = datos[0].url;
+      })
+      .catch((error) => {
+        console.error("Error al obtener el gatito:", error);
+      });
+  }
+  </script>
 </body>
 </html>
