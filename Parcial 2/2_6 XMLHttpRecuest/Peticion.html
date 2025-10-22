@@ -7,6 +7,7 @@
 <body>
   <button onclick="obtenerGatito()">Mostrar (XHR)</button>
   <button onclick="obtenerGatitoFetch()">Mostrar(Fetch)</button>
+  <button onclick="obtenerGatitoFetchAsync()">Mostrar(Fetch - Async-Await)</button>
   <br><br>
   <div id="resp"></div>
   <img id="gatito" width="300">
@@ -35,7 +36,14 @@
       .catch((error) => {
         console.error("Error al obtener el gatito:", error);
       });
-  }
+    }
+    async function obtenerGatitoFetchAsync() {
+      respuesta = await fetch('https://api.thecatapi.com/v1/images/search');
+      datos = await respuesta.json();
+      console.log(datos);
+      document.getElementById("gatito").src = datos[0].url;
+    }
+
   </script>
 </body>
 </html>
