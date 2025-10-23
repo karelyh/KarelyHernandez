@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gatitos con jQuery</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+
+  <button onclick="obtenerGatitoJQuery()">Mostrar Gatito (jQuery)</button>
+  <br><br>
+  <img id="gatito" width="300">
+
+  <script>
+    /* Mandar a llamar a la API usando jQuery */
+    function obtenerGatitoJQuery() {
+      $.ajax({
+        url: 'https://api.thecatapi.com/v1/images/search',
+        method: 'GET',
+        success: function(datos) {
+          console.log("Respuesta de la API:", datos);
+          $("#gatito").attr("src", datos[0].url);
+        },
+        error: function(error) {
+          console.error("Error al obtener el gatito:", error);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
