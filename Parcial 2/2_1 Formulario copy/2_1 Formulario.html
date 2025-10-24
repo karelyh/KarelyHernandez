@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <form id="miFormulario" action="https://httpbin.org/post" method="POST" target="resultadoPOST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido">
+        <button type="submit">Enviar (Normal)</button>
+
+        <button type="button" onclick="enviarConJS()">Enviar con JS</button>
+    </form>
+
+    <iframe name="resultadoPOST" style="width:100%;height:300px;"></iframe>
+
+    <script>
+        function enviarConJS() {
+            const datosForm = new FormData(document.getElementById("miFormulario"));
+            const cadenaURL = new URLSearchParams(datosForm).toString();
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},    
+                body: cadenaURL
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.error("Error:", err));
+        }        
+    </script>
+
+</body>
+</html>
