@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT||3000
 
 app.use(express.json()) // Esta funcion parsear el body de la peticion y si trae JSON la agrega a prp body
 
